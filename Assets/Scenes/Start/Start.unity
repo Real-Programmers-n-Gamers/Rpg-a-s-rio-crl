@@ -187,6 +187,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2159549946564735039, guid: 55576d865b0e4eb4f82dcd1c6d90d659, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159549947169286345, guid: 55576d865b0e4eb4f82dcd1c6d90d659, type: 3}
+      propertyPath: m_TagString
+      value: Map
+      objectReference: {fileID: 0}
     - target: {fileID: 2159549947169286387, guid: 55576d865b0e4eb4f82dcd1c6d90d659, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[2].m_Data
       value: 
@@ -253,6 +261,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2159549947593619806, guid: 55576d865b0e4eb4f82dcd1c6d90d659, type: 3}
       propertyPath: m_Name
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159549947593619806, guid: 55576d865b0e4eb4f82dcd1c6d90d659, type: 3}
+      propertyPath: m_TagString
       value: Map
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -547,10 +559,6 @@ PrefabInstance:
     - target: {fileID: 1912300641439440700, guid: f82ddfd0dd4312247be9afb33bf4ea81, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3012525803794799205, guid: f82ddfd0dd4312247be9afb33bf4ea81, type: 3}
-      propertyPath: attackRange
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f82ddfd0dd4312247be9afb33bf4ea81, type: 3}

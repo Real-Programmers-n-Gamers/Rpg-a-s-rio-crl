@@ -6,6 +6,13 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
+    public enum FightState
+    {
+        OutOfCombat,
+        Combat
+    }
+    private FightState fightState;
+
     public float speed;
     private Vector2 moveVector;
     private Rigidbody2D rb2d;
@@ -13,6 +20,8 @@ public class Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        fightState = FightState.OutOfCombat;
+
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.gravityScale = 0;
         rb2d.drag = 5;
