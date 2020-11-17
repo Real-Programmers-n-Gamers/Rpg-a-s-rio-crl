@@ -31,7 +31,7 @@ public class AnimationController : MonoBehaviour
             if (Input.GetButtonDown("Fire3")) { animator.SetTrigger("No"); waitTimer = 5f; }
         }
 
-        if ((waitTimer > 0 && controller.getMoveVector().normalized.x == 0 && controller.getMoveVector().normalized.y == 0))
+        if ((waitTimer > 0 && controller.getMoveVector().magnitude == 0))
         {
             animator.SetBool("Iddle", true);
             waitTimer -= Time.deltaTime;

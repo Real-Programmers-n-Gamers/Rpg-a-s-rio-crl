@@ -24,7 +24,6 @@ public class Controller : MonoBehaviour
     void Update()
     {
         moveVector = new Vector2(Input.GetAxis("Horizontal") * speed * Time.deltaTime,Input.GetAxis("Vertical")*speed*Time.deltaTime) ;
-        Debug.Log(moveVector);
         if (moveVector.magnitude != 0) rb2d.AddForce(moveVector);
     }
 
