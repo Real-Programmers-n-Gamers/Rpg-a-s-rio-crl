@@ -6,12 +6,13 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public Sprite sprite { get; private set; }
     public enum State 
     {
         OutOfCombat,
         Combat
     }
-    private State state;
+    public State state;
 
     public float speed;
     private Vector2 moveVector;
@@ -27,6 +28,7 @@ public class EnemyController : MonoBehaviour
     public float attackRange;
     private GameObject player;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,7 @@ public class EnemyController : MonoBehaviour
         rb2d.freezeRotation = true;
         initialPosition = transform.position;
 
-        rangeIndicator.transform.localScale = new Vector3(attackRange * 10, attackRange * 10,1);
+        rangeIndicator.transform.localScale = new Vector3(attackRange * 7, attackRange * 7,1);
         player = GameObject.FindGameObjectWithTag("Player");
 
         InvokeRepeating("SetTarget",0,targetTime);
@@ -62,6 +64,17 @@ public class EnemyController : MonoBehaviour
             if (ray.collider != null && ray.collider.tag == "Player") 
             {
                 state = State.Combat;
+                rb2d.constraints = RigidbodyConstraints2D.FreezeAll;
+                ray.collider.GetComponent<Controller>().StartCombat(getNeighbours(),gameObject);
+                rangeIndicator.SetActive(false);
+                for (int i = 0; i < getNeighbours().Length; i++)
+                {
+                    if (getNeighbours()[i].GetComponent<EnemyController>())
+                    {
+                        getNeighbours()[i].GetComponent<EnemyController>().setState(State.Combat);
+                        getNeighbours()[i].GetComponent<EnemyController>().rangeIndicator.SetActive(false);
+                    }
+                }
                 target = transform.position;
                 moveVector = Vector2.zero;
             }
@@ -75,6 +88,7 @@ public class EnemyController : MonoBehaviour
         {
             case State.OutOfCombat:
                 {
+                    if (!rangeIndicator.activeSelf) rangeIndicator.SetActive(true);
                     if (transform.position.x > target.x - 0.5f && transform.position.x < target.x + 0.5f &&
                         transform.position.y > target.y - 0.5f && transform.position.y < target.y + 0.5f)
                         moveVector = Vector2.zero;
@@ -95,6 +109,27 @@ public class EnemyController : MonoBehaviour
         return rb2d.velocity;
     }
 
+    public GameObject[] getNeighbours() 
+    {
+        Collider2D[] neighbourColliders = Physics2D.OverlapCircleAll(transform.position,attackRange);
+        List<GameObject> neighbour = new List<GameObject>();
+
+        for (int i = 0; i < neighbourColliders.Length; i++) 
+        {
+            if (neighbourColliders[i].gameObject.tag == "AttackIndicator")
+            {
+                neighbour.Add(neighbourColliders[i].transform.parent.gameObject);
+            }
+        }
+
+        return neighbour.ToArray();
+    }
+
+    public void setState(State s) 
+    {
+        state = s;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         moveVector = Vector2.zero;
@@ -103,5 +138,10 @@ public class EnemyController : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         if(state!=State.Combat) SetTarget();
+    }
+
+    public void SetSprite(Sprite _sprite) 
+    {
+        sprite = _sprite;
     }
 }

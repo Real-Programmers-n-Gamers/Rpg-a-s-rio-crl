@@ -228,9 +228,9 @@ GameObject:
   - component: {fileID: 4919347209634267368}
   - component: {fileID: 5820108977009426534}
   - component: {fileID: 4256622522389837652}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: AttackIndicator
-  m_TagString: Untagged
+  m_TagString: AttackIndicator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

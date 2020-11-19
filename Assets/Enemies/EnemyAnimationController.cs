@@ -18,6 +18,7 @@ public class EnemyAnimationController : MonoBehaviour
         waitTimer = 5f;
         animator = GetComponent<Animator>();
         controller = enemyControllerObject.GetComponent<EnemyController>();
+        controller.SetSprite(GetComponent<SpriteRenderer>().sprite);
     }
 
     // Update is called once per frame

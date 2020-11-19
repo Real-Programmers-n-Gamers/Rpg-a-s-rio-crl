@@ -18,10 +18,11 @@ public class Trigger : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Player") playerTriggered = true;
     }
+    
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Player") playerTriggered = false;

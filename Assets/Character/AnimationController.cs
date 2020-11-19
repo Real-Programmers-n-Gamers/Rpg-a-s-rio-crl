@@ -16,6 +16,7 @@ public class AnimationController : MonoBehaviour
         waitTimer = 2f;
         animator = GetComponent<Animator>();
         controller = GameObject.FindGameObjectWithTag("Player").GetComponent<Controller>();
+        controller.setSprite(getSprite());
     }
 
     // Update is called once per frame
@@ -43,5 +44,10 @@ public class AnimationController : MonoBehaviour
         }
 
         if (waitTimer <= 0) animator.SetTrigger("IddleAnim");
+    }
+
+    public Sprite getSprite() 
+    {
+        return GetComponent<SpriteRenderer>().sprite;
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2159549946564735037}
   m_Layer: 0
   m_Name: FloorTiles
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6468,7 +6468,7 @@ GameObject:
   - component: {fileID: 2159549947169286351}
   m_Layer: 0
   m_Name: Props
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6510,7 +6510,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6627,16 +6627,16 @@ Tilemap:
     m_Data: {fileID: 21300000, guid: 9b5d1a4a451d4d745ba442822a3d1e3b, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 5793d3390ecbe674983b97efcc24895b, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 7a8ba9248b1f4f547b1d2063ed31eade, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 9b5a158fbb7b70e4cb72dd317cbb4af4, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300000, guid: 673413bc75e9c644b8e6b84e07a2fd0a, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 11b52381921b0574793bb587f527d852, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 7a8ba9248b1f4f547b1d2063ed31eade, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 11
     m_Data:
@@ -7335,7 +7335,7 @@ GameObject:
   - component: {fileID: 2159549947593619805}
   m_Layer: 0
   m_Name: Map
-  m_TagString: Untagged
+  m_TagString: Map
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
